@@ -21,3 +21,13 @@ else:
         y = remainder
     # Display the result
     print(f"\nThe GCD of {a} and {b} is: {x}")
+
+"""
+    Calculate the GCD using the Euclidean algorithm
+- Read the two numbers a and b.
+- Divide the larger number by the smaller number and calculate the remainder.
+- Replace the larger number with the smaller number, and replace the smaller number with the obtained remainder.
+- Repeat the division and replacement steps while the remainder is not equal to 0.
+- When the remainder becomes 0, the last non-zero remainder is the GCD of the two numbers.
+- Display the GCD.
+"""
