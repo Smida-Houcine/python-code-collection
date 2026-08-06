@@ -1,23 +1,36 @@
-# Program: display integers between p and n
+# Program: display the integers between p and n
 
 # Ask for the starting integer
-p = int(input("Enter the starting integer p: "))
+p_value = input("Enter the starting integer p (p >= 0): ")
 # Ask for the ending integer
-n = int(input("Enter the ending integer n: "))
+n_value = input("Enter the ending integer n (n >= p): ")
+
+# Check if inputs are empty
+if len(p_value.strip()) == 0 or len(n_value.strip()) == 0:
+    print("\nError: p and n must be entered.")
+    exit()
+try:
+    # Convert inputs to integers
+    p = int(p_value)
+    n = int(n_value)
+except ValueError:
+    # Display an error message if inputs are not integers
+    print("\nError: p and n must be integers.")
+    exit()
 
 # Check that the interval is valid
-if p <= n:
-    # Case where there is only one integer
+if p >= 0 and n >= p:
+    # Check if there is only one integer
     if p == n:
         print(f"\nThe only integer between {p} and {n} is: {p}")
     else:
-        # Calculate the number of integers in the interval
-        number_of_integers = n - p + 1
+        # Count the integers
+        count = n - p + 1
         # Display the integers
-        print(f"\nThe {number_of_integers} integers from {p} to {n} are:")
+        print(f"\nThe {count} integers from {p} to {n} are:")
         for i in range(p, n + 1):
             print(i, end=" ")
         print()
 else:
-    # Error message if p is greater than n
-    print("\nError: p must be less than or equal to n.")
+    # Error message
+    print("\nError: p must be non-negative (p >= 0) and n must be greater than or equal to p (n >= p).")
