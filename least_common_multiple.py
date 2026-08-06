@@ -1,15 +1,28 @@
 # Program: calculate the least common multiple (LCM) of two non-negative integers a and b
 
 # Ask for the values of a and b
-a = int(input("Enter the value of a: "))
-b = int(input("Enter the value of b: "))
+a_value = input("Enter the value of a (a >= 0): ")
+b_value = input("Enter the value of b (b >= 0): ")
+
+# Check if inputs are empty
+if len(a_value.strip()) == 0 or len(b_value.strip()) == 0:
+    print("\nError: a and b must be entered.")
+    exit()
+try:
+    # Convert inputs to integers
+    a = int(a_value)
+    b = int(b_value)
+except ValueError:
+    # Display an error message if inputs are not integers
+    print("\nError: a and b must be integers.")
+    exit()
 
 # Check that a and b are valid
 if a < 0 or b < 0:
-    print("\nError: a and b must be non-negative integers (a >= 0 and b >= 0).")
+    print("\nError: a and b must be non-negative (a >= 0 and b >= 0).")
 # Special case: a = 0 or b = 0
 elif a == 0 or b == 0:
-    print(f"\nThe LCM of {a} and {b} is: 0")
+    print(f"\nThe least common multiple (LCM) of {a} and {b} is: 0")
 else:
     # Calculate the GCD using the Euclidean algorithm
     x = a
@@ -22,7 +35,7 @@ else:
     # Calculate the LCM
     lcm = (a * b) // gcd
     # Display the result
-    print(f"\nThe LCM of {a} and {b} is: {lcm}")
+    print(f"\nThe least common multiple (LCM) of {a} and {b} is: {lcm}")
     
 """
     Calculate the GCD using the Euclidean algorithm
