@@ -1,11 +1,23 @@
 # Program: display the Lucas sequence up to Ln
 
 # Ask for the value of n
-n = int(input("Enter the value of n: "))
+n_value = input("Enter the value of n (n >= 0): ")
+
+# Check if input is empty
+if len(n_value.strip()) == 0:
+    print("\nError: n must be entered.")
+    exit()
+try:
+    # Convert input to integer
+    n = int(n_value)
+except ValueError:
+    # Display an error message if the input is not an integer
+    print("\nError: n must be an integer.")
+    exit()
 
 # Check if n is valid
 if n < 0:
-    print("\nError: n must be a non-negative integer (n >= 0).")
+    print("\nError: n must be non-negative (n >= 0).")
 else:
     print(f"\nLucas sequence from L0 to L{n}:")
     # First Lucas numbers
