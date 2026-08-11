@@ -5,6 +5,9 @@ Program: calculate terms and sum of an arithmetic sequence
 An arithmetic sequence is a sequence where
 the difference between any two consecutive terms is constant.
 
+We denote the first term U1​, and the others follow: 
+Un​=U1​+(n−1)*r for an arithmetic sequence with common difference r.
+
 The terms look like:
 U1, U1 + r, U1 + 2 * r, U1 + 3 * r, ...
 
