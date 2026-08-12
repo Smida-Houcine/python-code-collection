@@ -1,6 +1,8 @@
 """
 Written by: SMIDA Houcine L. 2026
-Program: calculate terms and sum of an arithmetic sequence from U0 to Un with common difference r
+
+Program: calculate terms and sum of an arithmetic sequence from U0 to Un
+with common difference r, where n >= 0
 
 An arithmetic sequence is a sequence where
 the difference between any two consecutive terms is constant.
@@ -19,6 +21,9 @@ Un = U0 + n * r
 The sequence calculated by this program is:
 U0, U1, U2, ..., Un
 
+The number of terms from U0 to Un is:
+n + 1
+
 The sum of the (n + 1) terms from U0 to Un is:
 Sn = U0 + U1 + U2 + ... + Un
 
@@ -33,9 +38,9 @@ print()
 # Enter the first term U0
 U0_value = input("Enter the first term U0: ")
 # Enter the common difference r
-r_value = input("Enter the common difference r: ")
+r_value = input("Enter the common difference, r: ")
 # Enter the index of the last term n
-n_value = input("Enter the index of the last term n: ")
+n_value = input("Enter the index of the last term, n (n >= 0): ")
 
 # Check if inputs are empty
 if len(U0_value.strip()) == 0 or len(r_value.strip()) == 0 or len(n_value.strip()) == 0:
@@ -58,19 +63,13 @@ if n < 0:
     exit()
 
 # Check the type of the arithmetic sequence
-if r > 0:
-    print("\nThe sequence is increasing.")
-elif r < 0:
-    print("\nThe sequence is decreasing.")
-else:
-    print("\nThe sequence is constant.")
-
-# Display the parameters
-print(f"\nFirst term: U0 = {U0}")
-print(f"Common difference: r = {r}")
-print(f"Index of the last term: n = {n}")
-# Number of terms from U0 to Un
-print(f"Number of terms: {n + 1}")
+if n > 0:
+    if r > 0:
+        print("\nThe sequence is increasing.")
+    elif r < 0:
+        print("\nThe sequence is decreasing.")
+    else:
+        print("\nThe sequence is constant.")
 
 # Generate the terms from U0 to Un
 terms = [U0 + i * r for i in range(n + 1)]
@@ -83,7 +82,15 @@ Sn = ((n + 1) / 2) * (2 * U0 + n * r)
 
 # Display the terms from U0 to Un
 print(f"\nTerms from U0 to U{n}: {terms}")
-# Display the term of index n
-print(f"U{n} = {Un}")
+
+# Display the parameters
+print(f"\nFirst term: U0 = {U0}")
+print(f"Common difference: r = {r}")
+print(f"Index of the last term: n = {n}")
+
+# Display the last term
+print(f"Last term: U{n} = {Un}")
+# Number of terms from U0 to Un
+print(f"Number of terms: {n + 1}")
 # Display the sum of the (n + 1) terms from U0 to Un
-print(f"S{n} = {Sn}")
+print(f"Sum from U0 to U{n}: S{n} = {Sn}")
