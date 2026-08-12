@@ -1,34 +1,41 @@
 """
 Written by: SMIDA Houcine L. 2026
-Program: calculate terms and sum of an arithmetic sequence
+Program: calculate terms and sum of an arithmetic sequence from U1 to Un with common difference r
 
 An arithmetic sequence is a sequence where
 the difference between any two consecutive terms is constant.
 
-We denote the first term U1​, and the others follow: 
-Un​=U1​+(n−1)*r for an arithmetic sequence with common difference r.
+The first term of the sequence is U1.
 
 The terms look like:
 U1, U1 + r, U1 + 2 * r, U1 + 3 * r, ...
 
-The nth term is:
+The recurrence relation is:
+U(n + 1) = Un + r
+
+The term of index n is:
 Un = U1 + (n - 1) * r
 
-The sum of the first n terms is:
+The sequence calculated by this program is:
+U1, U2, U3, ..., Un
+
+The sum of the n terms from U1 to Un is:
+Sn = U1 + U2 + U3 + ... + Un
+
 Sn = (n / 2) * (U1 + Un)
 Sn = (n / 2) * (2 * U1 + (n - 1) * r)
 """
 
 # Display the purpose of the program
-print("Calculate terms and sum of an arithmetic sequence")
+print("Calculate an arithmetic sequence from U1 to Un with common difference r")
 print()
 
 # Enter the first term U1
 U1_value = input("Enter the first term U1: ")
 # Enter the common difference r
 r_value = input("Enter the common difference r: ")
-# Enter the number of terms n
-n_value = input("Enter the number of terms n: ")
+# Enter the index of the last term n
+n_value = input("Enter the index of the last term n: ")
 
 # Check if inputs are empty
 if len(U1_value.strip()) == 0 or len(r_value.strip()) == 0 or len(n_value.strip()) == 0:
@@ -61,20 +68,22 @@ else:
 # Display the parameters
 print(f"\nFirst term: U1 = {U1}")
 print(f"Common difference: r = {r}")
-print(f"Number of terms: n = {n}")
+print(f"Index of the last term: n = {n}")
+# Number of terms from U1 to Un
+print(f"Number of terms: {n}")
 
-# Generate the first n terms
+# Generate the terms from U1 to Un
 terms = [U1 + (i - 1) * r for i in range(1, n + 1)]
 
-# Calculate the nth term
+# Calculate the term of index n
 Un = U1 + (n - 1) * r
 
-# Calculate the sum of the first n terms
+# Calculate the sum of the terms from U1 to Un
 Sn = (n / 2) * (2 * U1 + (n - 1) * r)
 
-# Display the terms
-print(f"\nTerms of the sequence: {terms}")
-# Display the nth term
+# Display the terms from U1 to Un
+print(f"\nTerms from U1 to U{n}: {terms}")
+# Display the term of index n
 print(f"U{n} = {Un}")
-# Display the sum of the first n terms
+# Display the sum of the n terms from U1 to Un
 print(f"S{n} = {Sn}")
