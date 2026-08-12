@@ -13,13 +13,13 @@ U0, U0 + r, U0 + 2 * r, U0 + 3 * r, ...
 The recurrence relation is:
 U(n + 1) = Un + r
 
-The nth term is:
+The term of index n is:
 Un = U0 + n * r
 
 The sequence calculated by this program is:
 U0, U1, U2, ..., Un
 
-The sum of the first (n + 1) terms is:
+The sum of the (n + 1) terms from U0 to Un is:
 Sn = U0 + U1 + U2 + ... + Un
 
 Sn = ((n + 1) / 2) * (U0 + Un)
@@ -69,13 +69,13 @@ else:
 print(f"\nFirst term: U0 = {U0}")
 print(f"Common difference: r = {r}")
 print(f"Index of the last term: n = {n}")
-# Display the number of terms from U0 to Un
+# Number of terms from U0 to Un
 print(f"Number of terms: {n + 1}")
 
 # Generate the terms from U0 to Un
 terms = [U0 + i * r for i in range(n + 1)]
 
-# Calculate the nth term
+# Calculate the term of index n
 Un = U0 + n * r
 
 # Calculate the sum of the terms from U0 to Un
@@ -83,7 +83,7 @@ Sn = ((n + 1) / 2) * (2 * U0 + n * r)
 
 # Display the terms from U0 to Un
 print(f"\nTerms from U0 to U{n}: {terms}")
-# Display the nth term
+# Display the term of index n
 print(f"U{n} = {Un}")
-# Display the sum of the first n + 1 terms
+# Display the sum of the (n + 1) terms from U0 to Un
 print(f"S{n} = {Sn}")
